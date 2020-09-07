@@ -1,0 +1,11 @@
+header {
+  height: 400px;
+  width: 100%;
+  background-color: #ffa31a;
+  background-image: url(../images/asfalt-dark.png);
+  text-align: center;
+}
+
+.last-name {
+  font-weight: 300;
+}

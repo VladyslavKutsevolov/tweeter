@@ -1,0 +1,23 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  background-color: #4056A1;
+  color: #fff;
+  padding: 1.5em;
+}
+
+nav>span {
+  font-family: 'Bungee', cursive;
+}
+
+.fa-angle-double-down {
+  color: red;
+  margin-top: 5px;
+}
+
+.newTweet {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}

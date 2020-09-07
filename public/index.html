@@ -1,29 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-
-    <!-- App CSS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,300;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css"
+    />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-    <!-- External JS -->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f60010782b.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
+      <div class="newTweet">
+        <span><b>Write</b> a new tweet</span>
+        <i class="fas fa-angle-double-down"></i>
+      </div>
     </nav>
 
+    <header>
+      <div>
+        <img src="/images/profile-hex.png" />
+      </div>
+      <br />
+      <div>
+        <h2>Vladyslav <span class="last-name">Kutsevolov</span></h2>
+      </div>
+    </header>
+
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, quam
+        illum. At possimus doloremque ut assumenda dolor. Quo odio pariatur id
+        alias veritatis! Minus, autem in maxime sunt commodi nesciunt.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, quam
+        illum. At possimus doloremque ut assumenda dolor. Quo odio pariatur id
+        alias veritatis! Minus, autem in maxime sunt commodi nesciunt.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, quam
+        illum. At possimus doloremque ut assumenda dolor. Quo odio pariatur id
+        alias veritatis! Minus, autem in maxime sunt commodi nesciunt.
+      </p>
+    </main>
   </body>
 </html>
