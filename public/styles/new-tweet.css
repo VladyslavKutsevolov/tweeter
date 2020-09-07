@@ -1,0 +1,36 @@
+.tweet-label {
+  font-weight: 700;
+  margin-bottom: .2em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+}
+
+form>textarea {
+  outline: none;
+  resize: none;
+  overflow: auto;
+  height: 30px;
+  border-top-style: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 4px solid #666;
+  background-color: transparent;
+}
+
+.form-footer {
+  display: flex;
+  font-family: 'Bungee', cursive;
+  justify-content: space-between;
+  margin: .5em 0;
+}
+
+.btn-tweet {
+  font-size: .8em;
+  padding: 2px 5px;
+  color: #fff;
+  background-color: #4056A1;
+}

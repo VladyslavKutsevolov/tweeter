@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+  <meta charset="UTF-8" />
   <head>
-    <title>Tweeter - Home Page</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
       rel="stylesheet"
@@ -18,12 +18,14 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script
       src="https://kit.fontawesome.com/f60010782b.js"
       crossorigin="anonymous"
     ></script>
+    <title>Tweeter - Home Page</title>
   </head>
 
   <body>
@@ -48,21 +50,18 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, quam
-        illum. At possimus doloremque ut assumenda dolor. Quo odio pariatur id
-        alias veritatis! Minus, autem in maxime sunt commodi nesciunt.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, quam
-        illum. At possimus doloremque ut assumenda dolor. Quo odio pariatur id
-        alias veritatis! Minus, autem in maxime sunt commodi nesciunt.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, quam
-        illum. At possimus doloremque ut assumenda dolor. Quo odio pariatur id
-        alias veritatis! Minus, autem in maxime sunt commodi nesciunt.
-      </p>
+      <section class="new-tweet">
+        <form method="POST" action="/tweets">
+          <label class="tweet-label" for="tweet-text"
+            >What are you humming about?</label
+          >
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="form-footer">
+            <button class="btn-tweet" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>
