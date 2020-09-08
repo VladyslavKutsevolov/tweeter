@@ -40,7 +40,7 @@
 
     <header>
       <div>
-        <img src="/images/profile-hex.png" />
+        <img src="/images/hacker.png" width="300px" height="280px" />
       </div>
       <br />
       <div>
@@ -58,10 +58,17 @@
           <textarea name="text" id="tweet-text"></textarea>
           <div class="form-footer">
             <button class="btn-tweet" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+            <output
+              name="counter"
+              id="letter-count"
+              class="counter"
+              for="tweet-text"
+            ></output>
           </div>
         </form>
       </section>
     </main>
+
+    <script src="./scripts/composer-char-counter.js"></script>
   </body>
 </html>
