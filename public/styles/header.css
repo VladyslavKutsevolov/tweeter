@@ -1,9 +1,10 @@
-header {
+.main-header {
   height: 400px;
   width: 100%;
   background-color: #ffa31a;
   background-image: url(../images/asfalt-dark.png);
   text-align: center;
+  margin-top: 4.5em;
 }
 
 .last-name {

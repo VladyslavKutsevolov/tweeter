@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-body.css" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script
@@ -38,7 +39,7 @@
       </div>
     </nav>
 
-    <header>
+    <header class="main-header">
       <div>
         <img src="/images/hacker.png" width="300px" height="280px" />
       </div>
@@ -67,6 +68,30 @@
           </div>
         </form>
       </section>
+
+      <article class="tweet-body">
+        <header class="tweet-header">
+          <span>Name</span>
+          <span class="show-on-hover">@name</span>
+        </header>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus,
+          officiis?
+        </p>
+        <footer class="tweet-footer">
+          <span>10 days ago</span>
+          <div class="tweet-footer-icons">
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+        </footer>
+      </article>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+        cupiditate aliquid amet magnam! Hic sint ea quos, quam debitis optio
+        eius sit excepturi eligendi suscipit minus, sapiente a tenetur ullam!
+      </div>
     </main>
 
     <script src="./scripts/composer-char-counter.js"></script>
