@@ -32,9 +32,9 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <div class="newTweet">
+      <div class="write-new-tweet toggle-btn">
         <span><b>Write</b> a new tweet</span>
-        <i class="fas fa-angle-double-down"></i>
+        <i class="fas fa-angle-double-down arrow"></i>
       </div>
     </nav>
 
@@ -50,8 +50,8 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section>
-        <form class="new-tweet" method="POST" action="/tweets">
+      <section class="new-tweet" visibility: hidden>
+        <form class="form-new-tweet" method="POST" action="/tweets">
           <label class="tweet-label" for="tweet-text"
             >What are you humming about?</label
           >
@@ -71,6 +71,8 @@
       <article class="tweet-body">
         <!-- Dynamic tweets -->
       </article>
+
+      <a href="#" class="scrollUp"><i class="fa fa-chevron-up"></i></a>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>

@@ -8,9 +8,13 @@ const createHtmlTweet = (user, content, created_at) => {
   const $section = $('<section>').addClass('tweet-section');
   const $header = $('<header>').addClass('tweet-header');
   const $userName = $('<span>').addClass('user-name').text(user.name);
+  const $avatars = $('<img>')
+    .addClass('user-avatar')
+    .attr('src', `${user.avatars}`);
   const $userId = $('<span>').addClass('show-on-hover user').text(user.handle);
-
-  $header.append($userName, $userId);
+  const $containerforUsename = $('<div>').addClass('username-container');
+  $containerforUsename.append($avatars, $userName);
+  $header.append($containerforUsename, $userId);
 
   const $tweetContent = $('<p>').addClass('tweet-content').text(content.text);
 
@@ -30,28 +34,18 @@ const createHtmlTweet = (user, content, created_at) => {
   return $section;
 };
 
-const validateForm = () => {
-  const { errorList } = $('.new-tweet').validate({
-    submitHandler: function (form) {
-      $(form).ajaxSubmit();
-    },
-    rules: {
-      text: {
-        required: true,
-        minlength: 1,
-        maxlength: 140,
-        remote: { url: '/tweets', async: false },
-      },
-    },
-    messages: {
-      text: {
-        required: 'Tweet could not be empty',
-        minlength: 'Tweet should contain minimum 1 character',
-        maxlength: 'Tweet should not exceed 140 characters',
-      },
-    },
-  });
-  return errorList.length ? true : false;
+const validateForm = (formField) => {
+  let errorMsg = '';
+
+  if (!formField) {
+    return (errorMsg += 'Tweet cannot be blank!');
+  }
+
+  if (formField.length > 140) {
+    return (errorMsg += 'Tweet cannot exceed 140 characters!');
+  }
+
+  return errorMsg;
 };
 
 const getTweets = async () => {
@@ -65,28 +59,29 @@ const getTweets = async () => {
   });
 };
 
-$('.new-tweet').on('submit', function (e) {
+$('.form-new-tweet').on('submit', function (e) {
   e.preventDefault();
 
-  // const textarea = $(this).children('textarea').val();
-  // console.log(textarea);
-  const errorResult = validateForm();
-  if (!errorResult) {
-    try {
-      const serializedData = $(this).serialize();
-      console.log('btn clicked try');
+  const inputVal = $(this).children('textarea').val();
+  const errorResult = validateForm(inputVal);
+  if (errorResult) {
+    const errorMsg = $('<div>').addClass('tweet-text-error').text(errorResult);
+    $('.tweet-text-error').remove();
+    errorMsg.prependTo('.new-tweet').slideDown('slow');
+    return;
+  }
 
-      $.post('/tweets', serializedData).then((res) => {
-        getTweets();
-      });
+  try {
+    const serializedData = $(this).serialize();
 
+    $.post('/tweets', serializedData).then((res) => {
+      getTweets();
       $(this).children('textarea').val('');
-    } catch (error) {
-      console.error(error);
-    }
+      $('#letter-count').text(140);
+    });
+  } catch (error) {
+    console.error(error);
   }
 });
 
-$(document).ready(function () {
-  getTweets();
-});
+getTweets();

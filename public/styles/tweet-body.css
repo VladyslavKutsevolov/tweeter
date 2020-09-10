@@ -24,6 +24,16 @@
   margin-bottom: 1em;
 }
 
+.username-container {
+  display: flex;
+  align-items: center;
+}
+
+.user-name {
+  margin-left: 3px
+}
+
+
 .tweet-footer {
   display: flex;
   justify-content: space-between;
@@ -43,4 +53,25 @@
 
 .tweet-footer-icons i:hover {
   color: #ffa31a;
+}
+
+.scrollUp {
+  text-align: center;
+  padding: 10px;
+  border-radius: 30%;
+  background-color: red;
+  color: #fff;
+  opacity: 0;
+  transition: .5s;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  pointer-events: none;
+}
+
+.scrollUp.active {
+  bottom: 32px;
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(-55px);
 }
