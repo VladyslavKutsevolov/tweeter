@@ -1,46 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="UTF-8" />
-  <head>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,300;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      type="text/css"
-    />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/tweet-body.css" type="text/css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/f60010782b.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Tweeter - Home Page</title>
-  </head>
+<meta charset="UTF-8" />
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-      <div class="write-new-tweet toggle-btn">
-        <span><b>Write</b> a new tweet</span>
-        <i class="fas fa-angle-double-down arrow"></i>
-      </div>
-    </nav>
+<head>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,300;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet-body.css" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/f60010782b.js" crossorigin="anonymous"></script>
+  <title>Tweeter - Home Page</title>
+</head>
 
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span>tweeter</span>
+    <div class="write-new-tweet toggle-btn">
+      <span><b>Write</b> a new tweet</span>
+      <i class="fas fa-angle-double-down arrow"></i>
+    </div>
+  </nav>
+  <div class="flex-container">
     <header class="main-header">
       <div>
-        <img src="/images/hacker.png" width="300px" height="280px" />
+        <img src="/images/hacker.png" />
       </div>
       <br />
       <div>
@@ -50,20 +41,13 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet" visibility: hidden>
+      <section class="new-tweet" hidden>
         <form class="form-new-tweet" method="POST" action="/tweets">
-          <label class="tweet-label" for="tweet-text"
-            >What are you humming about?</label
-          >
+          <label class="tweet-label" for="tweet-text">What are you humming about?</label>
           <textarea name="text" data-tweet-text id="tweet-text"></textarea>
           <div class="form-footer">
             <button class="btn-tweet" type="submit">Tweet</button>
-            <output
-              name="counter"
-              id="letter-count"
-              class="counter"
-              for="tweet-text"
-            ></output>
+            <output name="counter" id="letter-count" class="counter" for="tweet-text"></output>
           </div>
         </form>
       </section>
@@ -74,12 +58,13 @@
 
       <a href="#" class="scrollUp"><i class="fa fa-chevron-up"></i></a>
     </main>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  </script>
+  <script type="text/javascript" src="/scripts/animation.js"></script>
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script src="./scripts/composer-char-counter.js"></script>
+</body>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-    </script>
-    <script type="text/javascript" src="/scripts/animation.js"></script>
-    <script type="text/javascript" src="/scripts/client.js"></script>
-    <script src="./scripts/composer-char-counter.js"></script>
-  </body>
 </html>

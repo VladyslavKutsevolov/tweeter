@@ -67,11 +67,12 @@ $('.form-new-tweet').on('submit', function (e) {
   if (errorResult) {
     const errorMsg = $('<div>').addClass('tweet-text-error').text(errorResult);
     $('.tweet-text-error').remove();
-    errorMsg.prependTo('.new-tweet').slideDown('slow');
+    errorMsg.prependTo('.new-tweet');
     return;
   }
 
   try {
+    $('.tweet-text-error').remove();
     const serializedData = $(this).serialize();
 
     $.post('/tweets', serializedData).then((res) => {

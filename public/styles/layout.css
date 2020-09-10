@@ -32,6 +32,15 @@ body {
   margin: 0 auto;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+@media only screen and (min-width: 1200px) {
+  .flex-container {
+    display: flex;
+    margin-top: 20vh;
+    justify-content: space-around;
+  }
+
+  .container {
+    width: 90%;
+    margin: 0;
+  }
+}

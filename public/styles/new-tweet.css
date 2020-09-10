@@ -3,6 +3,10 @@
   margin-bottom: .2em;
 }
 
+.new-tweet {
+  margin-bottom: 1.5em;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -44,4 +48,15 @@ form textarea {
   font-size: 1em;
   display: block;
   margin-top: 10px;
+}
+
+@media only screen and (min-width: 1200px) {
+  form {
+    margin-top: 0;
+    width: 50vw;
+  }
+
+  .tweet-text-error {
+    margin-bottom: 20px;
+  }
 }

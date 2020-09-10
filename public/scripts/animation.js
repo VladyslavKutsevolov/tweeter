@@ -1,6 +1,7 @@
 $(document).ready(function () {
   $('.toggle-btn').click(function () {
     $('.new-tweet').slideToggle(700);
+    $('#tweet-text').focus();
   });
 
   $(window).scroll(() => {

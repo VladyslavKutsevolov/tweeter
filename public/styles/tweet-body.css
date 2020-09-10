@@ -1,8 +1,9 @@
 .tweet-section {
   border: 4px solid #666;
   padding: 1em;
-  margin-top: 2em;
+  margin-bottom: 1.5em;
   border-radius: 5px;
+  margin-top: 1.5em;
 }
 
 .tweet-section:hover {
@@ -74,4 +75,14 @@
   pointer-events: auto;
   opacity: 1;
   transform: translateY(-55px);
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    width: 50vw;
+  }
+
+  .tweet-section {
+    margin-top: 0;
+  }
 }
