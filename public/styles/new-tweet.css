@@ -34,3 +34,11 @@ form textarea {
   color: #fff;
   background-color: #4056A1;
 }
+
+
+#tweet-text-error {
+  color: red;
+  font-size: 1em;
+  display: block;
+  margin-top: 5px;
+}
