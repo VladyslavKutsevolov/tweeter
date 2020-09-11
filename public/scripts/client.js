@@ -13,6 +13,7 @@ const createHtmlTweet = (user, content, created_at) => {
     .attr('src', `${user.avatars}`);
   const $userId = $('<span>').addClass('show-on-hover user').text(user.handle);
   const $containerforUsename = $('<div>').addClass('username-container');
+
   $containerforUsename.append($avatars, $userName);
   $header.append($containerforUsename, $userId);
 
@@ -27,6 +28,7 @@ const createHtmlTweet = (user, content, created_at) => {
     .append(`<i class="fas fa-flag"></i>
             <i class="fas fa-retweet"></i>
             <i class="fas fa-heart"></i>`);
+
   $tweetFooter.append($dateOfCreation, $footerIcons);
 
   $section.append($header, $tweetContent, $tweetFooter);
@@ -49,14 +51,17 @@ const validateForm = (formField) => {
 };
 
 const getTweets = async () => {
-  const data = await $.get('/tweets');
-  const $tweetBody = $('.tweet-body');
+  try {
+    const data = await $.get('/tweets');
+    const $tweetBody = $('.tweet-body');
+    data.forEach(({ user, content, created_at }) => {
+      const $section = createHtmlTweet(user, content, created_at);
 
-  data.forEach(({ user, content, created_at }) => {
-    const $section = createHtmlTweet(user, content, created_at);
-
-    $tweetBody.prepend($section);
-  });
+      $tweetBody.prepend($section);
+    });
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 $('.form-new-tweet').on('submit', function (e) {
