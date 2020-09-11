@@ -18,4 +18,4 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshot
 
-!["Screenshot of tweeter"]
+!["Screenshot of tweeter"](https://github.com/VladyslavKutsevolov/tweeter/blob/master/docs/tweeter.png)
